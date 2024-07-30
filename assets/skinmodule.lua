@@ -51,6 +51,7 @@ local v22 = { Color3.new(0.831373, 1, 0), ColorSequence.new(Color3.new(0.831373,
 local v23 = { Color3.new(0.643137, 0.952941, 1), ColorSequence.new(Color3.new(0.752941, 0.976471, 1), Color3.new(0.196078, 0.945098, 0.882353)) }
 local ReplicatedStorage = cloneref(game:GetService("ReplicatedStorage"));
 local SkinModules = ReplicatedStorage:WaitForChild("SkinModules");
+print("before returning")
 return {
 
 	["[Rifle]"] = { 	-- string, table
