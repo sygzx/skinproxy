@@ -48,9 +48,8 @@ local v20 = { Color3.new(0.666667, 0.666667, 1), ColorSequence.new({ ColorSequen
 local v21 = { Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.333333, 0), Color3.new(0.8, 0.690196, 0.0666667)) }
 local v22 = { Color3.new(0.831373, 1, 0), ColorSequence.new(Color3.new(0.831373, 1, 0), Color3.new(0.945098, 0.839216, 0.231373)) }
 local v23 = { Color3.new(0.643137, 0.952941, 1), ColorSequence.new(Color3.new(0.752941, 0.976471, 1), Color3.new(0.196078, 0.945098, 0.882353)) }
-local ReplicatedStorage = cloneref(game:GetService("ReplicatedStorage"));
-local SkinModules = ReplicatedStorage:WaitForChild("SkinModules");
-print("before returning")
+
+local SkinModules = cloneref(game:GetService("ReplicatedStorage")).SkinModules;
 return {
 
 	["[Rifle]"] = { 	-- string, table
@@ -813,13 +812,13 @@ return {
 		},
 
 		["Gothic"] = { 	-- string, table
-			["TextureID"] = script.Meshes.gothic.Rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.gothic.Rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.0787200928, 0.0141905546, -0.00573730469, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive",
 			["BorderColor"] = {Color3.fromRGB(29, 29, 29), vGothic}
 		},
 		["Penguin"] = { 	-- string, table
-			["TextureID"] = script.Meshes.Penguin.rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Penguin.rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.202697754, 0.0907911062, 0.0120239258, 2.46913861e-12, -3.7252903e-8, 1, 2.98028908e-8, 1.00000191, -3.7252903e-8, -1, -2.98028908e-8, -2.46916289e-12),
 			["Rarity"] = "Exclusive",
 			["BorderColor"] = v7
@@ -1913,7 +1912,7 @@ return {
 		},
 
 		["Gothic"] = { 	-- string, table
-			["TextureID"] = script.Meshes.gothic.db, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.gothic.db, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.194915771, 0.174392939, -0.001953125, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.fromRGB(29, 29, 29), vGothic}
@@ -1929,7 +1928,7 @@ return {
 			["Rarity"] = "Exclusive", 	-- string, string
 		},
 		["Penguin"] = { 	-- string, table
-			["TextureID"] = script.Meshes.Penguin.db, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Penguin.db, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(0.00805664062, 0.10456717, -0.0380859375, -2.87964097e-16, -9.31328259e-9, -0.99999994, 9.31322686e-10, 1.00000036, 8.38193159e-9, 1, 1.86264537e-9, 2.90566156e-16),
 			["Rarity"] = "Exclusive",
 			["BorderColor"] = v7
@@ -2372,7 +2371,7 @@ return {
 			["Crate"] = 1
 		},
 		["Gothic"] = { 	-- string, table
-			["TextureID"] = script.Meshes.gothic.Drum, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.gothic.Drum, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.194915801, 0.174392894, -0.00195309997, 0.999998927, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive",
 			["BorderColor"] = {Color3.fromRGB(29, 29, 29), vGothic}
