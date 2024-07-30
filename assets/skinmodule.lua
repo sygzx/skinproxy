@@ -1,9 +1,7 @@
 local cloneref = cloneref or function(i)
   return i
 end
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage");
-
+print("hi")
 local vGothic = ColorSequence.new(Color3.new(0.113725, 0.113725, 0.113725), Color3.new(0, 0, 0))
 local v1 = { Color3.new(1, 0.560784, 0.956863), ColorSequence.new(Color3.new(1, 0.560784, 0.956863), Color3.new(1, 0.027451, 0.839216)) }
 local v2 = { Color3.new(1, 0.027451, 0.839216), ColorSequence.new(Color3.new(0.0588235, 0.0313725, 0.054902), Color3.new(1, 0.027451, 0.839216)) }
@@ -51,9 +49,9 @@ local v20 = { Color3.new(0.666667, 0.666667, 1), ColorSequence.new({ ColorSequen
 local v21 = { Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.333333, 0), Color3.new(0.8, 0.690196, 0.0666667)) }
 local v22 = { Color3.new(0.831373, 1, 0), ColorSequence.new(Color3.new(0.831373, 1, 0), Color3.new(0.945098, 0.839216, 0.231373)) }
 local v23 = { Color3.new(0.643137, 0.952941, 1), ColorSequence.new(Color3.new(0.752941, 0.976471, 1), Color3.new(0.196078, 0.945098, 0.882353)) }
-
--- 1 = premium crate, 2 = knife crate, 3 = christmas crate, 999 = product unavailable
-local module = {
+local ReplicatedStorage = cloneref(game:GetService("ReplicatedStorage"));
+local SkinModules = ReplicatedStorage:WaitForChild("SkinModules");
+return {
 
 	["[Rifle]"] = { 	-- string, table
 		["Jungle Blaster"] = { 	-- string, table
@@ -62,13 +60,13 @@ local module = {
 			["Crate"] = 1  	-- string, number
 		},
 		["Metal"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Metal.rifle, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Metal.rifle, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(0.14163208, 0.573509276, 0.024230957, 0, 0, -1, 0, 0.999999046, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.RifleGhost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.RifleGhost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.000244140625, -0.100267321, -9.15527344e-05, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))},
@@ -131,7 +129,7 @@ local module = {
 		},
 
 		["GPO-Light"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.GPO.Rifle, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.GPO.Rifle, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.208007812, 0.185256913, 0.000610351562, -3.37081539e-14, 1.62803403e-07, -1.00000012, -8.74227695e-08, 0.999999881, 1.63036205e-07, 1, 8.74227766e-08, -1.94552524e-14),
 			["Rarity"] = "Exclusive", 	-- string, string
 		},
@@ -148,7 +146,7 @@ local module = {
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricRifle, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricRifle, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.181793213, -0.0415201783, 0.00421142578, 1.8189894e-12, 6.6174449e-24, 1, 7.27595761e-12, 1, 6.6174449e-24, -1, -7.27595761e-12, -1.8189894e-12),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -277,7 +275,7 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.ShotgunGhost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.ShotgunGhost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 3.05175781e-05, 0.199999928, 3.81469727e-06, -1, 0, -4.37113883e-08, 0, 1, 0, 4.37113883e-08, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
@@ -295,7 +293,7 @@ local module = {
 		},
 
 		["Halloween23"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Halloween.SG, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Halloween.SG, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.00573730469, 0.294590235, -0.115814209, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.372549, 0.0588235), Color3.new(0.8, 0.690196, 0.0666667))}
@@ -307,7 +305,7 @@ local module = {
 		},
 
 		["Red Skull"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.RedSkull.RedSkullShotgun, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.RedSkull.RedSkullShotgun, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.00326538086, 0.0239292979, -0.039352417, -4.37113883e-08, 0, -1, 0, 1, 0, 1, 0, -4.37113883e-08),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.917647, 0, 0), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(1, 0, 0)), ColorSequenceKeypoint.new(0.25, Color3.new(0.615686, 0, 0)), ColorSequenceKeypoint.new(0.5, Color3.new(0.32549, 0, 0)), ColorSequenceKeypoint.new(1, Color3.new(0.196078, 0, 0))})}
@@ -337,7 +335,7 @@ local module = {
 		},
 
 		["Kitty"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Kitty.KittyShotgun, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Kitty.KittyShotgun, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0233459473, 0.223892093, -0.0213623047, 4.37118963e-08, -6.53699317e-13, 1, 3.47284736e-20, 1, 7.38964445e-13, -0.999997139, 8.69506734e-21, 4.37119354e-08),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.690196, 0.882353), ColorSequence.new(Color3.new(1, 0.690196, 0.882353), Color3.new(1, 0.929412, 0.964706))}
@@ -361,7 +359,7 @@ local module = {
 		},
 
 		["Bat-Hero"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.HERO.HeroBat, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.HERO.HeroBat, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.00122070312, 0.141189337, 0.146026611, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0, 0), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.74902, 0, 0)), ColorSequenceKeypoint.new(0.25, Color3.new(0.133333, 0.133333, 0.133333)), ColorSequenceKeypoint.new(0.5, Color3.new(0.486275, 0.243137, 0.729412)), ColorSequenceKeypoint.new(1, Color3.new(1, 1, 0))})}
@@ -374,7 +372,7 @@ local module = {
 		},
 
 		["Hoodmas"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Hoodmas.shotgun, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Hoodmas.shotgun, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0, 0, 0, -4.37113883e-08, 0, -1, 0, 1, 0, 1, 0, -4.37113883e-08),
 			["Rarity"] = "Exclusive"  	-- string, string
 		},
@@ -385,7 +383,7 @@ local module = {
 		},
 
 		["Tact"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Tact.Shotgun, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Tact.Shotgun, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0610046387, 0.171100497, -0.00495910645, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.113725, 0.113725, 0.113725), ColorSequence.new(Color3.new(0.113725, 0.113725, 0.113725), Color3.new(0, 0, 0))}
@@ -397,7 +395,7 @@ local module = {
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricShotgun, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricShotgun, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 6.10351562e-05, 0.180232108, -0.624732971, 1, 0, -4.37113883e-08, 0, 1, 0, 4.37113883e-08, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -529,7 +527,7 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.GlockGhost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.GlockGhost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0, 0, -0.200004578, 1, 0, 4.37113883e-08, 0, 1, 0, -4.37113883e-08, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
@@ -603,7 +601,7 @@ local module = {
 		},
 
 		["Tact"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Tact.Silencer, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Tact.Silencer, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0766601562, -0.0350288749, -0.648864746, 1, 0, -4.37113883e-08, 0, 1, 0, 4.37113883e-08, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.113725, 0.113725, 0.113725), ColorSequence.new(Color3.new(0.113725, 0.113725, 0.113725), Color3.new(0, 0, 0))}
@@ -615,13 +613,13 @@ local module = {
 		},
 
 		["Mummy"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Raygun.mummy, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Raygun.mummy, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0105285645, -0.00735360384, -0.277282715, -1, -2.44256403e-16, 4.37114309e-08, 0, 0.999999046, -5.58793545e-09, -4.37113883e-08, 5.58793545e-09, -1.00000095),
 			["Rarity"] = "Exclusive", 	-- string, string
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricGlock, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricGlock, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.00207519531, 0.0318723917, 0.0401077271, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -746,18 +744,18 @@ local module = {
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricRevolver, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricRevolver, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.185462952, 0.0312761068, 0.000610351562, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
 		},
 		["Metal"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Metal.rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Metal.rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.0964050293, -0.0217685103, -0.000549316406, 1, 0, -1.50995803e-7, 0, 0.999999642, 0, 1.50995803e-7, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 		},
 		["Iced Out"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.IcedOut.rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.IcedOut.rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.0419578552, -0.0496253371, -0.0009765625, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Legendary", 	-- string, string
 		},
@@ -775,7 +773,7 @@ local module = {
 		},
 
 		["Halloween23"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Halloween.Rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Halloween.Rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0257873535, -0.0117108226, -0.00671386719, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.372549, 0.0588235), Color3.new(0.8, 0.690196, 0.0666667))}
@@ -784,7 +782,7 @@ local module = {
 		["Stars"] = { 	-- string, table
 			["Rarity"] = "Exclusive", 	-- string, string
 
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Stars.Revolver, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Stars.Revolver, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0765533447, 0.0790345669, 0.00277709961, 1.99520325e-23, 1.62920685e-07, -1, 2.44929371e-16, 1, 1.62920685e-07, 1, -2.44929371e-16, -1.99520294e-23),
 			["DisplayName"] = "Thunder",  	-- string, string
 			["BorderColor"] = {Color3.new(1, 1, 0), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(1, 1, 0)), ColorSequenceKeypoint.new(0.5, Color3.new(1, 0.333333, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.333333, 0.666667, 1))})}
@@ -808,7 +806,7 @@ local module = {
 		},
 
 		["Portal"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Portal.rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Portal.rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.072303772, 0.0471935868, -0.0138244629, -1, 0, 0, 0, 0.99999994, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.027451, 0.839216), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0.0588235, 0.0313725, 0.054902, 0, 1, 1, 0.027451, 0.839216, 0)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216))})}
@@ -828,34 +826,34 @@ local module = {
 		},
 
 		["Ruby"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Ruby.rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Ruby.rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(0.0331878662, -0.0243580937, 0.000518798828, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.027451, 0.839216), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0.0588235, 0.0313725, 0.054902, 0, 1, 1, 0.027451, 0.839216, 0)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216))})}
 		},
 
 		["Ninja"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Ninja.NinjaRev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Ninja.NinjaRev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(0.0598754883, 0.102456093, 0.00305175781, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Legendary", 	-- string, string,
 			["Crate"] = 999
 		},
 
 		["Military"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Military.Rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Military.Rev, 	-- string, Instance (userdata)
 			["CFrame"]= CFrame.new(-0.0181350708, -0.10841608, -0.00543212891, 0, 0, 1, 1.49010297E-08, 1, 0, -1, 1.49010297E-08, 0),
 			["Rarity"] = "Exclusive", 	-- string, string,
 		},
 
 		["Cupid"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Cupid.rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Cupid.rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(0.0240020752, 0.229963183, -0.0170898438, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new( 1, 0.560784, 0.956863), ColorSequence.new(Color3.new(1, 0.560784, 0.956863), Color3.new(1, 0.027451, 0.839216))}
 		},
 
 		["Love"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Love.rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Love.rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.0348358154, -0.112736881, 0.0156860352, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new( 1, 0.560784, 0.956863), ColorSequence.new(Color3.new(1, 0.560784, 0.956863), Color3.new(1, 0.027451, 0.839216))}
@@ -868,7 +866,7 @@ local module = {
 		},
 
 		["Kitty"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Kitty.KittyRevolver, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Kitty.KittyRevolver, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0310440063, 0.0737591386, 0.0226745605, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.690196, 0.882353), ColorSequence.new(Color3.new(1, 0.690196, 0.882353), Color3.new(1, 0.929412, 0.964706))}
@@ -887,7 +885,7 @@ local module = {
 		},
 
 		["DH-Stars II"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Popular.STARSREV, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Popular.STARSREV, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0578613281, -0.0479719043, -0.00115966797, -1.00000405, 1.15596135e-16, 1.64267286e-30, -1.15596135e-16, 1, 2.99751983e-14, 1.66683049e-30, -2.99751983e-14, -1.00000405),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["NoTrade"] = true,  	-- string, boolean
@@ -895,7 +893,7 @@ local module = {
 		},
 
 		["Heaven"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Heaven.Revolver, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Heaven.Revolver, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0829315186, -0.0831851959, -0.00296020508, -0.999999881, 2.94089277e-17, 8.27179774e-25, -2.94089277e-17, 0.999999881, 6.85215614e-16, 8.27179922e-25, -6.85215667e-16, -1),
 			["Rarity"] = "Legendary", 	-- string, string
 			["Crate"] = 999  	-- string, number
@@ -908,7 +906,7 @@ local module = {
 		},
 
 		["Water"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Water.WaterGunRevolver, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Water.WaterGunRevolver, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0440063477, 0.028675437, -0.00469970703, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -925,14 +923,14 @@ local module = {
 		},
 
 		["Wild West"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.WildWest.Rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.WildWest.Rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.00323486328, -0.110876054, -0.00628662109, 0, 0, 0.999995708, 0, 1, 0, -1, 0, 0),
 			["Rarity"] = "Legendary", 	-- string, string
 			["Crate"] = 999
 		},
 
 		["Soul"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Soul.rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Soul.rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0646362305, 0.2725088, -0.00242614746, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.372549, 0.0588235), Color3.new(0.8, 0.690196, 0.0666667))}
@@ -944,7 +942,7 @@ local module = {
 		},
 
 		["XMAS"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.XMAS.Rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.XMAS.Rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0034942627, -0.0323467255, -0.000244140625, -1.00000095, 7.45058149e-09, 0, -7.45058149e-09, 0.999999523, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive"  	-- string, string
 		},
@@ -956,14 +954,14 @@ local module = {
 		},
 
 		["Toy"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Toy.RevolverTOY, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Toy.RevolverTOY, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0250854492, -0.144362092, -0.00266647339, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.666667, 0), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 1, 0)), ColorSequenceKeypoint.new(0.5, Color3.new(0.666667, 0.333333, 1)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.666667, 0))})}
 		},
 
 		["Golden Age"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.GoldenAge.Revolver, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.GoldenAge.Revolver, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0295257568, 0.0725820661, -0.000946044922, 1, -4.89858741e-16, -7.98081238e-23, 4.89858741e-16, 1, 3.2584137e-07, -7.98081238e-23, -3.2584137e-07, 1),
 			["Rarity"] = "Legendary", 	-- string, string
 			["Crate"] = 999  	-- string, number
@@ -975,7 +973,7 @@ local module = {
 		},
 
 		["Skeleton"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Barbie.Revol, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Barbie.Revol, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0218505859, -0.0277693868, 0.0029296875, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.560784, 0.956863), ColorSequence.new(Color3.new(1, 0.560784, 0.956863), Color3.new(1, 0.027451, 0.839216))}
@@ -987,21 +985,21 @@ local module = {
 		},
 
 		["Red Skull"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.RedSkull.RedSkullRev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.RedSkull.RedSkullRev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0043258667, 0.0084195137, -0.00238037109, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.917647, 0, 0), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(1, 0, 0)), ColorSequenceKeypoint.new(0.25, Color3.new(0.615686, 0, 0)), ColorSequenceKeypoint.new(0.5, Color3.new(0.32549, 0, 0)), ColorSequenceKeypoint.new(1, Color3.new(0.196078, 0, 0))})}
 		},
 
 		["8-BIT"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.BIT8.RPixel, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.BIT8.RPixel, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0261230469, -0.042888701, 0.00260925293, -1, 1.355249e-20, -3.55271071e-15, 1.355249e-20, 1, -1.81903294e-27, 3.55271071e-15, -1.81903294e-27, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.282353, 0.792157, 0.945098), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.164706, 0.890196, 1)), ColorSequenceKeypoint.new(0.25, Color3.new(0.27451, 1, 0.164706)), ColorSequenceKeypoint.new(0.5, Color3.new(0.658824, 0.219608, 0.658824)), ColorSequenceKeypoint.new(1, Color3.new(0.341176, 1, 0.976471))})}
 		},
 
 		Shader = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shader.Rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shader.Rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(0.00216674805, 0.0199100971, -0.00390625, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			DisplayName = "Squid",
@@ -1011,27 +1009,27 @@ local module = {
 		["Spooky"] = { 	-- string, table
 			["Rarity"] = "Exclusive", 	-- string, string
 
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Spooky.rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Spooky.rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0029296875, -0.0561903119, -0.011138916, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["DisplayName"] = "Jason",  	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.372549, 0.0588235), Color3.new(0.8, 0.690196, 0.0666667))}
 		},
 
 		["Hoodmas"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Hoodmas.revolver, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Hoodmas.revolver, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.00862121582, -0.000740110874, -0.0009765625, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive"  	-- string, string
 		},
 
 		["Thunder II"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Stars.RevolverII, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Stars.RevolverII, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0765533447, 0.0790345669, 0.00277709961, 1.99520325e-23, 1.62920685e-07, -1, 2.44929371e-16, 1, 1.62920685e-07, 1, -2.44929371e-16, -1.99520294e-23),
 			["Rarity"] = "Legendary", 	-- string, string
 			["Crate"] = 999  	-- string, number
 		},
 
 		["Void"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Void.rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Void.rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.00503540039, 0.0082899332, -0.00164794922, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Legendary", 	-- string, string
 			["Crate"] = 999  	-- string, number
@@ -1044,7 +1042,7 @@ local module = {
 		},
 
 		["Etheral"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Etheral.Rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Etheral.Rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0255432129, -0.0427106023, 0.0140380859, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.831373, 1, 0), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.831373, 1, 0)), ColorSequenceKeypoint.new(1, Color3.new(0.831373, 1, 0)), ColorSequenceKeypoint.new(1, Color3.new(0.831373, 1, 0))})},
@@ -1057,7 +1055,7 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.RevolverGhost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.RevolverGhost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 1.52587891e-05, 0, 0, 1, 0, 8.74227766e-08, 0, 1, 0, -8.74227766e-08, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
@@ -1066,7 +1064,7 @@ local module = {
 		["Web-Hero III"] = { 	-- string, table
 			["Rarity"] = "Legendary", 	-- string, string
 
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.HERO.HeroWeb3, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.HERO.HeroWeb3, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0891418457, -0.0215809345, -0.0041809082, -1.99520325e-23, -1.62920685e-07, 1, 2.44929371e-16, 1, 1.62920685e-07, -1, 2.44929371e-16, 1.99520294e-23),
 			["Crate"] = 999  	-- string, number
 		},
@@ -1077,14 +1075,14 @@ local module = {
 		},
 
 		["Candy"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Candy.RevolverCandy, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Candy.RevolverCandy, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.106658936, -0.0681198835, 0.00198364258, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.666667, 0.666667, 1), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.666667, 0.666667, 1)), ColorSequenceKeypoint.new(0.5, Color3.new(0.666667, 0.333333, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.333333, 0.333333, 1))})}
 		},
 
 		["Mystical"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Mystical.Revolver, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Mystical.Revolver, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.015838623, -0.0802496076, 0.00772094727, 1, 0, 4.37113883e-08, 0, 1, 0, -4.37113883e-08, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.666667, 0.666667, 1), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.666667, 0.666667, 1)), ColorSequenceKeypoint.new(0.5, Color3.new(0.666667, 0.333333, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.333333, 0.333333, 1))})}
@@ -1093,14 +1091,14 @@ local module = {
 		["Testing"] = { 	-- string, table
 			["Rarity"] = "Exclusive", 	-- string, string
 
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Testing, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Testing, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["DisplayName"] = "N/A",  	-- string, string
 			["SkinLocked"] = true
 		},
 
 		["DH-Verified"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Popular.VERIFIEDREV, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Popular.VERIFIEDREV, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.049407959, -0.0454721451, 0.00158691406, -1, 0, 0, 0, 1, 2.22044605e-15, 0, -2.22044605e-15, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["NoTrade"] = true,  	-- string, boolean
@@ -1114,14 +1112,14 @@ local module = {
 		},
 
 		["Dragon"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Dragon.DragonRev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Dragon.DragonRev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0384216309, 0.0450432301, -0.000671386719, 1.87045402e-31, 4.21188801e-16, -0.99999994, 1.77635684e-15, 1, -4.21188827e-16, 1, 1.77635684e-15, -1.87045413e-31),
 			["Rarity"] = "Legendary", 	-- string, string
 			["Crate"] = 999  	-- string, number
 		},
 
 		["Tact"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Tact.Rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Tact.Rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.318634033, -0.055095911, 0.00491333008, 0, 0, 1, 0, 1, 0, -1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.113725, 0.113725, 0.113725), ColorSequence.new(Color3.new(0.113725, 0.113725, 0.113725), Color3.new(0, 0, 0))}
@@ -1134,14 +1132,14 @@ local module = {
 		},
 
 		["Web-Hero"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.HERO.HeroWeb, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.HERO.HeroWeb, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0891418457, -0.0215809345, -0.0041809082, -1.99520325e-23, -1.62920685e-07, 1, 2.44929371e-16, 1, 1.62920685e-07, -1, 2.44929371e-16, 1.99520294e-23),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0, 0), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.74902, 0, 0)), ColorSequenceKeypoint.new(0.25, Color3.new(0.133333, 0.133333, 0.133333)), ColorSequenceKeypoint.new(0.5, Color3.new(0.486275, 0.243137, 0.729412)), ColorSequenceKeypoint.new(1, Color3.new(1, 1, 0))})}
 		},
 
 		["Undead"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Undead.rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Undead.rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.202331543, 0.0300472379, -0.00631713867, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.372549, 0.0588235), Color3.new(0.8, 0.690196, 0.0666667))},
@@ -1158,7 +1156,7 @@ local module = {
 		},
 
 		["Galactic"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Galactic.galacticRev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Galactic.galacticRev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.049041748, 0.0399398208, -0.00772094727, 0, 0, 1, 0, 1, 0, -1, 0, 0),
 			["Rarity"] = "Exclusive",-- string, string
 			["BorderColor"] = {Color3.new(1, 0, 0), ColorSequence.new(Color3.new(1, 0, 0), Color3.new(1, 1, 1))}
@@ -1182,7 +1180,7 @@ local module = {
 		},
 
 		["Raygun"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Raygun.rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Raygun.rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.130737305, -0.0714715123, 0.00900268555, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Legendary", 	-- string, string
 			["Crate"] = 999  	-- string, number
@@ -1197,7 +1195,7 @@ local module = {
 		},
 
 		["Devil"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.CyanPack.Devil, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.CyanPack.Devil, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0185699463, 0.293397784, -0.00256347656, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.752941, 0.294118, 0.796078), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.501961, 0.760784, 0.862745)), ColorSequenceKeypoint.new(0.5, Color3.new(0.823529, 0.839216, 0.870588)), ColorSequenceKeypoint.new(1, Color3.new(0.776471, 0.458824, 0.584314))})}
@@ -1229,7 +1227,7 @@ local module = {
 		["Web-Hero II"] = { 	-- string, table
 			["Rarity"] = "Legendary", 	-- string, string
 
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.HERO.HeroWeb2, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.HERO.HeroWeb2, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0891418457, -0.0215809345, -0.0041809082, -1.99520325e-23, -1.62920685e-07, 1, 2.44929371e-16, 1, 1.62920685e-07, -1, 2.44929371e-16, 1.99520294e-23),
 			["Crate"] = 999  	-- string, number
 		},
@@ -1251,7 +1249,7 @@ local module = {
 		},
 
 		["Cartoon"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Cartoon.CartoonRev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Cartoon.CartoonRev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.015411377, 0.0135096312, 0.00338745117, 1.00000095, 3.41326549e-13, 2.84217399e-14, 3.41326549e-13, 1.00000191, -9.89490712e-10, 2.84217399e-14, -9.89490712e-10, 1.00000191),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.333333, 1, 0.498039), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.333333, 1, 0.498039)), ColorSequenceKeypoint.new(0.5, Color3.new(1, 1, 0)), ColorSequenceKeypoint.new(1, Color3.new(1, 0, 1))})}
@@ -1260,7 +1258,7 @@ local module = {
 		["Ice"] = { 	-- string, table
 			["Rarity"] = "Exclusive", 	-- string, string
 
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Ice.rev, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Ice.rev, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0299072266, 0.0293902755, -0.0108032227, 1, 0, 0, 0, 0, 1, 0, -1, 0),
 			["DisplayName"] = "Frozen",  	-- string, string
 			["BorderColor"] = {Color3.new(0.643137, 0.952941, 1), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.643137, 0.952941, 1)), ColorSequenceKeypoint.new(1, Color3.new(0, 0.752941, 0.976471, 1, 0, 1, 0.196078, 0.945098, 0.882353, 0)), ColorSequenceKeypoint.new(1, Color3.new(0, 0.752941, 0.976471, 1, 0, 1, 0, 196078, 0.945098, 0.882353, 0))})}
@@ -1275,7 +1273,7 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.ARGhost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.ARGhost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.116256714, 0.0750004649, 6.10351562e-05, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
@@ -1344,7 +1342,7 @@ local module = {
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricAR, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricAR, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.16942215, 0.0508521795, 0.0669250488, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -1484,7 +1482,7 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.LMGGhost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.LMGGhost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.374502182, -0.25, -0.25, -1, 0, -1.31134158e-07, 0, 1, 0, 1.31134158e-07, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
@@ -1558,7 +1556,7 @@ local module = {
 		},
 
 		["Toy"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Toy.LMGTOY, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Toy.LMGTOY, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.285247803, -0.0942560434, -0.270412445, 1, 0, 4.37113883e-08, 0, 1, 0, -4.37113883e-08, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.666667, 0), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 1, 0)), ColorSequenceKeypoint.new(0.5, Color3.new(0.666667, 0.333333, 1)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.666667, 0))})}
@@ -1570,7 +1568,7 @@ local module = {
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricLMG, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricLMG, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.142379761, 0.104723871, -0.303771973, -1, 0, -4.37113883e-08, 0, 1, 0, 4.37113883e-08, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -1632,7 +1630,7 @@ local module = {
 		},
 
 		["Candy"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Candy.LMG, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Candy.LMG, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.125213623, -0.30771935, -0.0625305176, -4.37113883e-08, 0, 1, 0, 1, 0, -1, 0, -4.37113883e-08),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.666667, 0.666667, 1), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.666667, 0.666667, 1)), ColorSequenceKeypoint.new(0.5, Color3.new(0.666667, 0.333333, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.333333, 0.333333, 1))})}
@@ -1704,7 +1702,7 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.GlockGhost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.GlockGhost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0, 0, -0.200004578, 1, 0, 4.37113883e-08, 0, 1, 0, -4.37113883e-08, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
@@ -1783,7 +1781,7 @@ local module = {
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricGlock, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricGlock, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.00207519531, 0.0318723917, 0.0401077271, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -1908,7 +1906,7 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.DoubleBGhost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.DoubleBGhost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0250015259, -0.077037394, 0, 1, 0, 0, 0, 0.999998331, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
@@ -1921,12 +1919,12 @@ local module = {
 			["BorderColor"] = {Color3.fromRGB(29, 29, 29), vGothic}
 		},
 		["Iced Out"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.IcedOut.db, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.IcedOut.db, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.0154724121, -0.0110113621, -0.00543212891, 0, 0, 1.00000036, 0, 1.00000036, 0, -1, 0, 0),
 			["Rarity"] = "Legendary", 	-- string, string
 		},
 		["Metal"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Metal.db, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Metal.db, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.125686646, -0.135336846, 0.00628662109, 0, 0, -1, 0, 0.999998212, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 		},
@@ -1961,14 +1959,14 @@ local module = {
 		},
 
 		["Halloween23"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Halloween.DB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Halloween.DB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.00271606445, -0.0485508144, 0.000732421875, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.372549, 0.0588235), Color3.new(0.8, 0.690196, 0.0666667))}
 		},
 
 		["Ruby"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Ruby.db, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Ruby.db, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.0772705078, -0.0124946237, -0.00723266602, 0, 0, 0.999999642, 0, 1, 0, -1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.027451, 0.839216), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0.0588235, 0.0313725, 0.054902, 0, 1, 1, 0.027451, 0.839216, 0)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216))})}
@@ -1980,13 +1978,13 @@ local module = {
 		},
 
 		["Military"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Military.db, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Military.db, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(0.547592163, 0.0359069705, -0.00466918945, 0, 0, 1, 0, 1, 0, -1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string,
 		},
 
 		["Red Skull"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.RedSkull.RedSkullDB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.RedSkull.RedSkullDB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0143432617, -0.151709318, 0.00820922852, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.917647, 0, 0), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(1, 0, 0)), ColorSequenceKeypoint.new(0.25, Color3.new(0.615686, 0, 0)), ColorSequenceKeypoint.new(0.5, Color3.new(0.32549, 0, 0)), ColorSequenceKeypoint.new(1, Color3.new(0.196078, 0, 0))})}
@@ -2010,27 +2008,27 @@ local module = {
 		},
 
 		["Hoodmas"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Hoodmas.db, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Hoodmas.db, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0, 0, 0, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1),
 			["Rarity"] = "Exclusive"  	-- string, string
 		},
 
 		["Cupid"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Cupid.db, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Cupid.db, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.0375976562, 0.048615396, 0.00555419922, 0, 0, 1, 0, 0.999998212, 0, -1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new( 1, 0.560784, 0.956863), ColorSequence.new(Color3.new(1, 0.560784, 0.956863), Color3.new(1, 0.027451, 0.839216))}
 		},
 
 		["Love"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Love.DB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Love.DB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(0.159469604, -0.16393137, -0.00659179688, -1, 0, 0, 0, 0.999999106, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new( 1, 0.560784, 0.956863), ColorSequence.new(Color3.new(1, 0.560784, 0.956863), Color3.new(1, 0.027451, 0.839216))}
 		},
 
 		["Ninja"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Ninja.NinjaDB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Ninja.NinjaDB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.0128631592, 0.0259246826, -0.00207519531, 0, 0, 1, 0, 1, 0, -1, 0, 0),
 			["Rarity"] = "Legendary", 	-- string, string,
 			["Crate"] = 999
@@ -2048,7 +2046,7 @@ local module = {
 		},
 
 		["Etheral"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Etheral.db, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Etheral.db, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0578613281, -0.0133004785, 0.0168457031, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.831373, 1, 0), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.831373, 1, 0)), ColorSequenceKeypoint.new(1, Color3.new(0.831373, 1, 0)), ColorSequenceKeypoint.new(1, Color3.new(0.831373, 1, 0))})},
@@ -2057,14 +2055,14 @@ local module = {
 		["Spooky"] = { 	-- string, table
 			["Rarity"] = "Exclusive", 	-- string, string
 
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Spooky.DB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Spooky.DB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.170593262, 0.0795405507, -6.10351562e-05, 1, 0, 0, 0, 0.999999762, 0, 0, 0, 0.999999762),
 			["DisplayName"] = "Eye",  	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.372549, 0.0588235), Color3.new(0.8, 0.690196, 0.0666667))}
 		},
 
 		["Portal"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Portal.DB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Portal.DB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.296951294, -0.054553628, 0.0379638672, 0.99999702, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.027451, 0.839216), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0.0588235, 0.0313725, 0.054902, 0, 1, 1, 0.027451, 0.839216, 0)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216))})}
@@ -2077,14 +2075,14 @@ local module = {
 		},
 
 		["8-BIT"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.BIT8.DBPixel, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.BIT8.DBPixel, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.240386963, -0.127295256, -0.00776672363, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.282353, 0.792157, 0.945098), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.164706, 0.890196, 1)), ColorSequenceKeypoint.new(0.25, Color3.new(0.27451, 1, 0.164706)), ColorSequenceKeypoint.new(0.5, Color3.new(0.658824, 0.219608, 0.658824)), ColorSequenceKeypoint.new(1, Color3.new(0.341176, 1, 0.976471))})}
 		},
 
 		Shader = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shader.DB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shader.DB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.0402069092, -0.0140712261, -0.0110473633, -1.1920929e-07, 0, 1.00000012, 0, 1, 0, -1.00000012, 0, -1.1920929e-07),
 			["Rarity"] = "Exclusive", 	-- string, string
 			DisplayName = "Panda",
@@ -2094,20 +2092,20 @@ local module = {
 		["Magma"] = { 	-- string, table
 			["Rarity"] = "Legendary", 	-- string, string
 
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Numbers.MagmaDB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Numbers.MagmaDB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.750671387, 0.339070976, 0.0111999512, 0, 0, 1, 0, 1, 0, -1, 0, 0),
 			["Crate"] = 999  	-- string, number
 		},
 
 		["Soul"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Soul.db, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Soul.db, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.405822754, 0.0975035429, -0.00506591797, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.372549, 0.0588235), Color3.new(0.8, 0.690196, 0.0666667))}
 		},
 
 		["Car"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Barbie.db, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Barbie.db, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0457763672, 0.0508109927, 0.000579833984, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.560784, 0.956863), ColorSequence.new(Color3.new(1, 0.560784, 0.956863), Color3.new(1, 0.027451, 0.839216))}
@@ -2124,7 +2122,7 @@ local module = {
 		},
 
 		["Mystical"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Mystical.DB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Mystical.DB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.00408935547, -0.021312356, 0.00366210938, -1, -1.95924309e-33, 2.03287907e-20, 1.95924309e-33, 1, 0, -2.0328781e-20, 0, -0.999999523),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.666667, 0.666667, 1), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.666667, 0.666667, 1)), ColorSequenceKeypoint.new(0.5, Color3.new(0.666667, 0.333333, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.333333, 0.333333, 1))})}
@@ -2133,7 +2131,7 @@ local module = {
 		["Stars"] = { 	-- string, table
 			["Rarity"] = "Exclusive", 	-- string, string,
 
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Stars.DB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Stars.DB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0697937012, 0.0765505433, 0.00863647461, 7.54618668e-07, -1.62920685e-07, 1, 6.1716413e-14, 1, 1.62920685e-07, -1, 6.17164197e-14, -7.54618668e-07),
 			["DisplayName"] = "Dino",  	-- string, string
 			["BorderColor"] = {Color3.new(1, 1, 0), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(1, 1, 0)), ColorSequenceKeypoint.new(0.5, Color3.new(1, 0.333333, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.333333, 0.666667, 1))})}
@@ -2150,7 +2148,7 @@ local module = {
 		},
 
 		["Flower"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.CyanPack.DB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.CyanPack.DB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.00828552246, 0.417651355, -0.00537109375, 4.18358377e-06, -1.62920685e-07, 1, 3.4104116e-13, 1, 1.62920685e-07, -1, 3.41041052e-13, -4.18358377e-06),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.752941, 0.294118, 0.796078), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.501961, 0.760784, 0.862745)), ColorSequenceKeypoint.new(0.5, Color3.new(0.823529, 0.839216, 0.870588)), ColorSequenceKeypoint.new(1, Color3.new(0.776471, 0.458824, 0.584314))})}
@@ -2163,7 +2161,7 @@ local module = {
 		},
 
 		["Tact"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Tact.DB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Tact.DB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0701141357, -0.0506889224, -0.0826416016, 0, 0, 1, 0, 1, 0, -1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.113725, 0.113725, 0.113725), ColorSequence.new(Color3.new(0.113725, 0.113725, 0.113725), Color3.new(0, 0, 0))}
@@ -2176,21 +2174,21 @@ local module = {
 		},
 
 		["Water"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Water.DBWater, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Water.DBWater, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0710754395, 0.00169920921, -0.0888671875, 0, 0, 1, 0, 1, 0, -1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
 		},
 
 		["Angry-Hero"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.HERO.HeroAngry, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.HERO.HeroAngry, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.171646118, -0.0197404027, -0.00314331055, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0, 0), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.74902, 0, 0)), ColorSequenceKeypoint.new(0.25, Color3.new(0.133333, 0.133333, 0.133333)), ColorSequenceKeypoint.new(0.5, Color3.new(0.486275, 0.243137, 0.729412)), ColorSequenceKeypoint.new(1, Color3.new(1, 1, 0))})}
 		},
 
 		["Heaven"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Heaven.DB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Heaven.DB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0303955078, 0.022110641, 0.00296020508, -0.999997139, -7.05812226e-16, 7.85568618e-30, 7.05812226e-16, 0.999997139, -2.06501178e-14, 6.44518474e-30, 2.06501042e-14, -0.999999046),
 			["Rarity"] = "Legendary", 	-- string, string
 			["Crate"] = 999  	-- string, number
@@ -2203,14 +2201,14 @@ local module = {
 		},
 
 		["Toy"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Toy.DBToy, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Toy.DBToy, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0484313965, -0.00164616108, -0.0190467834, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.666667, 0), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 1, 0)), ColorSequenceKeypoint.new(0.5, Color3.new(0.666667, 0.333333, 1)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.666667, 0))})}
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricDB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricDB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0755996704, -0.0420352221, 0.00543212891, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -2240,7 +2238,7 @@ local module = {
 		},
 
 		["Undead"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Undead.AstroDB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Undead.AstroDB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.193084717, 0.17139101, 0.00225830078, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.372549, 0.0588235), Color3.new(0.8, 0.690196, 0.0666667))},
@@ -2258,14 +2256,14 @@ local module = {
 		},
 
 		["Dragon"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Dragon.DBDragon, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Dragon.DBDragon, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.123794556, 0.0481165648, 0.00048828125, 7.14693442e-07, 3.13283705e-10, 1, -4.56658222e-09, 1, -3.13281678e-10, -1, -4.56658533e-09, 7.14693442e-07),
 			["Rarity"] = "Legendary", 	-- string, string
 			["Crate"] = 999  	-- string, number
 		},
 
 		["Golden Age"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.GoldenAge["Double Barrel"], 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.GoldenAge["Double Barrel"], 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.00664520264, 0.0538104773, 0.0124816895, -1, 4.89858741e-16, 7.98081238e-23, 4.89858741e-16, 1, 3.2584137e-07, 7.98081238e-23, 3.2584137e-07, -1),
 			["Rarity"] = "Legendary", 	-- string, string
 			["Crate"] = 999  	-- string, number
@@ -2278,7 +2276,7 @@ local module = {
 		},
 
 		["Wild West"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.WildWest.DB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.WildWest.DB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.159378052, -0.123334587, -0.00241088867, 0, 0, -0.999995232, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Legendary", 	-- string, string
 			["Crate"] = 999
@@ -2299,7 +2297,7 @@ local module = {
 		},
 
 		["Candy"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Candy.DBCandy, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Candy.DBCandy, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0430603027, -0.0375298262, -0.00198364258, 0, 0, 1, 0, 1, 0, -1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string 
 			["BorderColor"] = {Color3.new(0.666667, 0.666667, 1), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.666667, 0.666667, 1)), ColorSequenceKeypoint.new(0.5, Color3.new(0.666667, 0.333333, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.333333, 0.333333, 1))})}
@@ -2311,7 +2309,7 @@ local module = {
 		},
 
 		["XMAS"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.XMAS.DB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.XMAS.DB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 1.39941406, 0.0596529841, -0.0409545898, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive"  	-- string, string
 		},
@@ -2351,7 +2349,7 @@ local module = {
 		},
 
 		["Cartoon"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Cartoon.DBCartoon, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Cartoon.DBCartoon, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.00927734375, -0.00691050291, 0.000732421875, -1, -2.79396772e-08, -9.31322797e-10, -2.79396772e-08, 1, 1.42607872e-08, 9.31322575e-10, 1.42607872e-08, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.333333, 1, 0.498039), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.333333, 1, 0.498039)), ColorSequenceKeypoint.new(0.5, Color3.new(1, 1, 0)), ColorSequenceKeypoint.new(1, Color3.new(1, 0, 1))})}
@@ -2360,7 +2358,7 @@ local module = {
 		["Ice"] = { 	-- string, table
 			["Rarity"] = "Exclusive", 	-- string, string
 
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Ice.DB, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Ice.DB, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.574920654, 0.309675515, 0.0344848633, -1, 0, 0, 0, 0, 1, 0, 1, 0),
 			["DisplayName"] = "Frozen",  	-- string, string
 			["BorderColor"] = {Color3.new(0.643137, 0.952941, 1), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.643137, 0.952941, 1)), ColorSequenceKeypoint.new(1, Color3.new(0, 0.752941, 0.976471, 1, 0, 1, 0.196078, 0.945098, 0.882353, 0)), ColorSequenceKeypoint.new(1, Color3.new(0, 0.752941, 0.976471, 1, 0, 1, 0, 196078, 0.945098, 0.882353, 0))})}
@@ -2484,7 +2482,7 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.SMGGhost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.SMGGhost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -1.14440918e-05, 1.78813934e-07, -0.0263671875, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
@@ -2558,7 +2556,7 @@ local module = {
 		},
 
 		["Tact"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Tact.Uzi, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Tact.Uzi, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0408782959, 0.0827783346, -0.0423583984, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.113725, 0.113725, 0.113725), ColorSequence.new(Color3.new(0.113725, 0.113725, 0.113725), Color3.new(0, 0, 0))}
@@ -2570,7 +2568,7 @@ local module = {
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricSMG, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricSMG, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0620956421, 0.109580457, 0.00729370117, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -2700,7 +2698,7 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.TacticalShotgunGhost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.TacticalShotgunGhost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.148262024, 0, 0, 1, 0, 8.74227766e-08, 0, 1, 0, -8.74227766e-08, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
@@ -2718,7 +2716,7 @@ local module = {
 		},
 
 		["Halloween23"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Halloween.Tact, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Halloween.Tact, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0715637207, -0.0843618512, 0.00582885742, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.372549, 0.0588235), Color3.new(0.8, 0.690196, 0.0666667))}
@@ -2747,14 +2745,14 @@ local module = {
 		},
 
 		["Portal"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Portal.Tact, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Portal.Tact, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -1.0434494, 0.0293064713, -0.063079834, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.027451, 0.839216), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0, 0.0588235, 0.0313725, 0.054902, 0, 1, 1, 0.027451, 0.839216, 0)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216)), ColorSequenceKeypoint.new(1, Color3.new(1, 0.027451, 0.839216))})}
 		},
 
 		["Love"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Love.Tact, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Love.Tact, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.0231781006, -0.114733696, 0.0161743164, 0, 0, 0.999999821, 0, 0.999998748, 0, -1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new( 1, 0.560784, 0.956863), ColorSequence.new(Color3.new(1, 0.560784, 0.956863), Color3.new(1, 0.027451, 0.839216))}
@@ -2767,13 +2765,13 @@ local module = {
 		},
 
 		["Military"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Military.Tact, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Military.Tact, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(-0.916564941, -0.0996659398, 0.128448486, 0, 0, 0.999999642, 2.98023224E-08, 1.00000012, 0, -1.00000012, -2.98023224E-08, 0),
 			["Rarity"] = "Exclusive", 	-- string, string,
 		},
 
 		["Cloud"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.CyanPack.Cloud, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.CyanPack.Cloud, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0441589355, -0.0269355774, -0.000701904297, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.752941, 0.294118, 0.796078), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.501961, 0.760784, 0.862745)), ColorSequenceKeypoint.new(0.5, Color3.new(0.823529, 0.839216, 0.870588)), ColorSequenceKeypoint.new(1, Color3.new(0.776471, 0.458824, 0.584314))})}
@@ -2781,7 +2779,7 @@ local module = {
 
 		["Spooky"] = { 	-- string, table
 			["Rarity"] = "Exclusive", 	-- string, string
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Spooky.tact, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Spooky.tact, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.199981689, -0.124790192, -0.00152587891, -1, 0, 0, 0, 1, 0, 0, 0, -1),
 			["DisplayName"] = "Blood",-- string, string
 			["BorderColor"] = {Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.372549, 0.0588235), Color3.new(0.8, 0.690196, 0.0666667))}
@@ -2793,7 +2791,7 @@ local module = {
 		},
 
 		["Hoodmas"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Hoodmas.tact, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Hoodmas.tact, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive"  	-- string, string
 		},
@@ -2822,21 +2820,21 @@ local module = {
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricTac, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricTac, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0838031769, -0.0377542973, 0.00717163086, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
 		},
 
 		["Soul"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Soul.tact, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Soul.tact, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.347473145, 0.0268714428, 0.00553894043, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.372549, 0.0588235), Color3.new(0.8, 0.690196, 0.0666667))}
 		},
 
 		["GPO-Magma"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.GPO.MaguTact, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.GPO.MaguTact, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.282501221, 0.0472121239, -0.0065612793, -6.60624482e-06, 1.5649757e-08, -1, -5.68434189e-14, 1, -1.56486806e-08, 1, 5.68434189e-14, -6.60624482e-06),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.666667, 0), ColorSequence.new(Color3.new(1, 1, 0), Color3.new(0.109804, 0.317647, 1))}
@@ -2849,21 +2847,21 @@ local module = {
 		},
 
 		["Tact"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Tact.Tact, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Tact.Tact, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0687713623, -0.0684046745, 0.12701416, 0, 0, 1, 0, 1, 0, -1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.113725, 0.113725, 0.113725), ColorSequence.new(Color3.new(0.113725, 0.113725, 0.113725), Color3.new(0, 0, 0))}
 		},
 
 		["Galactic"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Galactic.TacticalGalactic, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Galactic.TacticalGalactic, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.0411682129, -0.0281000137, 0.00103759766, 0, 5.68434189e-14, 1, -1.91456822e-13, 1, 5.68434189e-14, -1, 1.91456822e-13, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0, 0), ColorSequence.new(Color3.new(1, 0, 0), Color3.new(1, 1, 1))}
 		},
 
 		["Water"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Water.TactWater, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Water.TactWater, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0238037109, -0.00912904739, 0.00485229492, 0, 0, 1, 0, 1, 0, -1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -2872,7 +2870,7 @@ local module = {
 		["Numbers"] = { 	-- string, table
 			["Rarity"] = "Legendary", 	-- string, string
 
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Numbers.Tactical, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Numbers.Tactical, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.347015381, -0.101575613, -0.0437011719, 0, 0, 1, 0, 1, 0, -1, 0, 0),
 			["Crate"] = 999  	-- string, number
 		},
@@ -2889,7 +2887,7 @@ local module = {
 		},
 
 		["Undead"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Undead.Tact, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Undead.Tact, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.558105469, -0.00996416807, 0.0152893066, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(1, 0.372549, 0.0588235), ColorSequence.new(Color3.new(1, 0.372549, 0.0588235), Color3.new(0.8, 0.690196, 0.0666667))},
@@ -2913,7 +2911,7 @@ local module = {
 		},
 
 		["Void"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Void.tact, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Void.tact, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.0505371094, -0.0487936139, 0.00158691406, 0, 0, 1, 0, 1, 0, -1, 0, 0),
 			["Rarity"] = "Legendary", 	-- string, string
 			["Crate"] = 999  	-- string, number
@@ -3003,7 +3001,7 @@ local module = {
 		["Ice"] = { 	-- string, table
 			["Rarity"] = "Exclusive", 	-- string, string
 
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Ice.tact, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Ice.tact, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.151062012, 0.0138154626, 0.000366210938, 1, 0, 0, 0, 0, 1, 0, -1, 0),
 			["DisplayName"] = "Frozen",  	-- string, string
 			["BorderColor"] = {Color3.new(0.643137, 0.952941, 1), ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.643137, 0.952941, 1)), ColorSequenceKeypoint.new(1, Color3.new(0, 0.752941, 0.976471, 1, 0, 1, 0.196078, 0.945098, 0.882353, 0)), ColorSequenceKeypoint.new(1, Color3.new(0, 0.752941, 0.976471, 1, 0, 1, 0, 196078, 0.945098, 0.882353, 0))})}
@@ -3020,7 +3018,7 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.AK47Ghost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.AK47Ghost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.750015259, 4.76837158e-07, -3.05175781e-05, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
@@ -3084,7 +3082,7 @@ local module = {
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricAK, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricAK, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.155792236, 0.18423444, 0.00140380859, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -3643,7 +3641,7 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.ARGhost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.ARGhost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.116256714, 0.0750004649, 6.10351562e-05, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
@@ -3712,13 +3710,13 @@ local module = {
 		},
 
 		["Hoodmas"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Hoodmas.ar, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Hoodmas.ar, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0, 0, 0, -1, 0, -8.74227766e-08, 0, 1, 0, 8.74227766e-08, 0, -1),
 			["Rarity"] = "Exclusive"  	-- string, string
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricAR, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricAR, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.16942215, 0.0508521795, 0.0669250488, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -3863,14 +3861,14 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.AUGGhost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.AUGGhost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -7.62939453e-06, 0.0499991775, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
 		},
 
 		["Military"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Military.Aug, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Military.Aug, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new(0.108810425, 0.0431235433, 0.018737793, 0, 0, 1, 0, 1.00000012, 0, -1.00000012, 0, 0),
 			["Rarity"] = "Exclusive", 	-- string, string,
 		},
@@ -3948,7 +3946,7 @@ local module = {
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricAUG, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricAUG, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.331085205, -0.0117390156, 0.00155639648, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -4078,7 +4076,7 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.DrumgunGhost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.DrumgunGhost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 1.14440918e-05, 0, 0, 1, 0, 8.74227766e-08, 0, 1, 0, -8.74227766e-08, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
@@ -4157,7 +4155,7 @@ local module = {
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricDrum, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricDrum, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( -0.471969604, 0.184426308, 0.075378418, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -4287,7 +4285,7 @@ local module = {
 		},
 
 		["Shadow"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Shadow.P90Ghost, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Shadow.P90Ghost, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 6.86645508e-05, 0.000218153, 3.05175781e-05, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0.560784, 0.470588, 1), ColorSequence.new(Color3.new(0.560784, 0.470588, 1), Color3.new(0.576471, 0.380392, 1))}
@@ -4361,7 +4359,7 @@ local module = {
 		},
 
 		["Electric"] = { 	-- string, table
-			["TextureID"] = ReplicatedStorage.SkinModules.Meshes.Electric.ElectricP90, 	-- string, Instance (userdata)
+			["TextureID"] = SkinModules.Meshes.Electric.ElectricP90, 	-- string, Instance (userdata)
 			["CFrame"] = CFrame.new( 0.166191101, -0.225557804, -0.0075378418, 1, 0, 0, 0, 1, 0, 0, 0, 1),
 			["Rarity"] = "Exclusive", 	-- string, string
 			["BorderColor"] = {Color3.new(0, 1, 1), ColorSequence.new(Color3.new(0, 1, 1), Color3.new(0.666667, 1, 1))}
@@ -4552,5 +4550,3 @@ local module = {
 		}
 	}
 }
-
-return module
