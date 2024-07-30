@@ -1,7 +1,6 @@
 local cloneref = cloneref or function(i)
   return i
 end
-print("hi")
 local vGothic = ColorSequence.new(Color3.new(0.113725, 0.113725, 0.113725), Color3.new(0, 0, 0))
 local v1 = { Color3.new(1, 0.560784, 0.956863), ColorSequence.new(Color3.new(1, 0.560784, 0.956863), Color3.new(1, 0.027451, 0.839216)) }
 local v2 = { Color3.new(1, 0.027451, 0.839216), ColorSequence.new(Color3.new(0.0588235, 0.0313725, 0.054902), Color3.new(1, 0.027451, 0.839216)) }
