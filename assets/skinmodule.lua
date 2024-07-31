@@ -3306,13 +3306,6 @@ return {
 			["Crate"] = 2
 		},
 
-		Daisho = {
-			["CFrame"] = CFrame.new(-0.100000001, 0.0299999993, 0, -1, 0, -1.50995803e-07, 0, 1, 0, 1.50995803e-07, 0, -1),
-			["Rarity"] = "Legendary",
-			["Crate"] = 999,
-			["SkinLocked"] = true
-		},
-
 		["RGB Dual Bayonets"] = {
 			["CFrame"] = CFrame.new(-0.520424962, 0.0484008789, -0.00109863281, 0, 1, 0, 1, 0, 0, 0, 0, -1),
 			["Rarity"] = "Exclusive",
@@ -3320,12 +3313,6 @@ return {
 			["Crate"] = 2,
 			["SkinLocked"] = true
 		},
-		--[[
-		Eagle = {
-			["CFrame"] = CFrame.new(0, 0.600000024, -0.00100000005, -4.37113883e-08, -1, 0, 1, -4.37113883e-08, 0, 0, 0, 1),
-			["Rarity"] = "Legendary",
-			["Crate"] = 999
-		},]]
 
 		["Love Kukri"] = { 	-- string, table
 			["CFrame"] = CFrame.new( 0.650018692, 0.419342041, -0.0283660889, 0, 1, 0, 0, 0, -1, -1, 0, 0),
@@ -3354,8 +3341,6 @@ return {
 			["Rarity"] = "Exclusive", 	-- string, string
 			["CFrame"] = CFrame.new(0.0253430605, 0.106079102, 0.000465393066, 0, 3.25960725e-09, -1, 0, 1, 3.25960747e-09, 1, 0, -0)
 		},
-
-		
 
 		["Ruby Fan"] = { 	-- string, table
 			["CFrame"] = CFrame.new(-0.531107247, -0.00726318359, 0.0272521973, 0, 1, 0, -1, 0, 0, 0, 0, 1),
